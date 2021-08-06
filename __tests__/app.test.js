@@ -54,24 +54,24 @@ describe('topping routes', () => {
     expect(res.body).toEqual(topping);
   });
 
-  // test('updates a topping via PUT', async() => {
-  //   const topping = await Topping.insert(milkPudding);
-  //   topping.cost = 0.5;
+  test('updates a topping via PUT', async() => {
+    const topping = await Topping.insert(milkPudding);
+    topping.cost = 0.50;
 
-  //   const res = await request(app)
-  //     .put(`/api/v1/toppings/${topping.id}`)
-  //     .send(topping);
+    const res = await request(app)
+      .put(`/api/v1/toppings/${topping.id}`)
+      .send(topping);
 
-  //   expect(res.body).toEqual({
-  //     id: '1',
-  //     name: 'Milk Pudding',
-  //     description: 'Custard-like in taste and flavor, with a hint of milkiness.',
-  //     image: 'https://i.ytimg.com/vi/uxtJKbXOlmg/hqdefault.jpg',
-  //     texture: ['soft'],
-  //     hasDairy: true,
-  //     cost: 0.5,
-  //   });
-  // });
+    expect(res.body).toEqual({
+      id: '1',
+      name: 'Milk Pudding',
+      description: 'Custard-like in taste and flavor, with a hint of milkiness.',
+      image: 'https://i.ytimg.com/vi/uxtJKbXOlmg/hqdefault.jpg',
+      texture: ['soft'],
+      hasDairy: true,
+      cost: 0.50,
+    });
+  });
 
   // test('deletes a topping via DELETE', async () => {
   //   const topping = await Topping.insert(milkPudding);

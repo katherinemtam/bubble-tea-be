@@ -73,13 +73,13 @@ describe('topping routes', () => {
     });
   });
 
-  // test('deletes a topping via DELETE', async () => {
-  //   const topping = await Topping.insert(milkPudding);
+  test('deletes a topping via DELETE', async () => {
+    const topping = await Topping.insert(milkPudding);
 
-  //   const res = await request(app)
-  //     .delete(`/api/v1/toppings/${topping.id}`)
-  //     .send(topping);
+    const res = await request(app)
+      .delete(`/api/v1/toppings/${topping.id}`)
+      .send(topping);
 
-  //   expect(res.body).toEqual(topping);
-  // });
+    expect(res.body).toEqual(topping);
+  });
 });

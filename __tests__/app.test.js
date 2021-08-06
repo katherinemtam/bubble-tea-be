@@ -2,7 +2,7 @@ import pool from '../lib/utils/pool.js';
 import setup from '../data/setup.js';
 import request from 'supertest';
 import app from '../lib/app.js';
-// import Topping from '../lib/models/Topping.js';
+import Topping from '../lib/models/Topping.js';
 
 describe('topping routes', () => {
   beforeEach(() => {
@@ -35,15 +35,15 @@ describe('topping routes', () => {
     expect(res.body).toEqual({ ...milkPudding, id: '1' });
   });
 
-  // test('gets all toppings via GET', async () => {
-  //   const topping1 = await Topping.insert(milkPudding);
-  //   const topping2 = await Topping.insert(poppingBoba);
+  test('gets all toppings via GET', async () => {
+    const topping1 = await Topping.insert(milkPudding);
+    const topping2 = await Topping.insert(poppingBoba);
 
-  //   const res = await request(app)
-  //     .get('/api/v1/toppings');
+    const res = await request(app)
+      .get('/api/v1/toppings');
 
-  //   expect(res.body).toEqual([topping1, topping2]);
-  // });
+    expect(res.body).toEqual([topping1, topping2]);
+  });
 
   // test('gets a topping via GET', async() => {
   //   const topping = await Topping.insert(milkPudding);

@@ -44,4 +44,13 @@ describe('topping routes', () => {
 
     expect(res.body).toEqual([topping1, topping2]);
   });
+
+  test('gets a topping via GET', async() => {
+    const topping = await Topping.insert(milkPudding);
+
+    const res = await request(app)
+      .get(`/api/v1/toppings/${topping.id}`);
+    
+    expect(res.body).toEqual(topping);
+  });
 });

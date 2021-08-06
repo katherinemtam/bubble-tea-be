@@ -72,4 +72,14 @@ describe('topping routes', () => {
       cost: 0.5,
     });
   });
+
+  test('deletes a topping via DELETE', async () => {
+    const topping = await Topping.insert(milkPudding);
+
+    const res = await request(app)
+      .delete(`/api/v1/toppings/${topping.id}`)
+      .send(topping);
+
+    expect(res.body).toEqual(topping);
+  });
 });

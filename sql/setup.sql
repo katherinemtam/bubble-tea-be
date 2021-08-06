@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS toppings;
+
+CREATE TABLE toppings (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name TEXT NOT NULL,
+  description TEXT NOT NULL,
+  image TEXT NOT NULL,
+  texture TEXT [] NOT NULL,
+  has_dairy BOOL NOT NULL,
+  cost DECIMAL(8,2) NOT NULL
+)

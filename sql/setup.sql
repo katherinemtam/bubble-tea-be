@@ -5,7 +5,7 @@ CREATE TABLE toppings (
   name TEXT NOT NULL,
   description TEXT NOT NULL,
   image TEXT NOT NULL,
-  texture TEXT [] NOT NULL,
+  texture TEXT NOT NULL,
   has_dairy BOOL NOT NULL,
   cost DECIMAL(8,2) NOT NULL
 )

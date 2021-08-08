@@ -13,7 +13,7 @@ describe('topping routes', () => {
     name: 'Milk Pudding',
     description: 'Custard-like in taste and flavor, with a hint of milkiness.',
     image: 'https://i.ytimg.com/vi/uxtJKbXOlmg/hqdefault.jpg',
-    texture: ['soft'],
+    texture: 'soft',
     hasDairy: true,
     cost: 1.00,
   };
@@ -22,7 +22,7 @@ describe('topping routes', () => {
     name: 'Popping Boba',
     description: 'Looks like boba, but bursts with flavored juice!',
     image: 'https://cdn.shopify.com/s/files/1/0479/3437/files/popboba.jpg?16437212153516682457',
-    texture: ['liquid'],
+    texture: 'liquid',
     hasDairy: false,
     cost: 0.50,
   };
@@ -67,7 +67,7 @@ describe('topping routes', () => {
       name: 'Milk Pudding',
       description: 'Custard-like in taste and flavor, with a hint of milkiness.',
       image: 'https://i.ytimg.com/vi/uxtJKbXOlmg/hqdefault.jpg',
-      texture: ['soft'],
+      texture: 'soft',
       hasDairy: true,
       cost: 0.50,
     });
